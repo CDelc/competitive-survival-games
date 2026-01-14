@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "competitive_survival_games",
+  "version": "${version}",
+  "name": "Competitive Survival Games",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/competitive_survival_games/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "dev.carden.competitive_survival_games.client.Competitive_survival_gamesDataGenerator"
+    ],
+    "client": [
+      "dev.carden.competitive_survival_games.client.Competitive_survival_gamesClient"
+    ],
+    "main": [
+      "dev.carden.competitive_survival_games.Competitive_survival_games"
+    ]
+  },
+  "mixins": [
+    "competitive_survival_games.mixins.json",
+    {
+      "config": "competitive_survival_games.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
